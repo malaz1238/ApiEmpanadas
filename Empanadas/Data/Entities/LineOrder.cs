@@ -16,4 +16,3 @@ namespace Empanadas.Data.Entities
         public int Amount { get; set; }
     }
 }
-}
