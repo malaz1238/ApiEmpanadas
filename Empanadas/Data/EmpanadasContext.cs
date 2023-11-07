@@ -69,11 +69,10 @@ namespace Empanadas.Data
                         TasteName = "JyQ"
                     });
 
-                // TABLA ENTRE PRODUCT Y COLOUR
                 modelBuilder.Entity<Product>()
                 .HasMany(p => p.Tastes)
                 .WithMany()
-                .UsingEntity(j => j 
+                .UsingEntity(j => j
                     .ToTable("TasteProducts") 
                 );
 
