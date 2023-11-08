@@ -23,7 +23,7 @@ namespace Empanadas.Services.Implementations
                     .ToList();
             }
 
-            public Product GetById(int id)
+            public Product? GetById(int id)
             {
                 return _contextEmp.Products
                     .Include(p => p.Tastes)
@@ -39,7 +39,7 @@ namespace Empanadas.Services.Implementations
 
             public void Delete(int productId)
             {
-                Product productToBeRemoved = _contextEmp.Products.FirstOrDefault(p => p.ProductId == productId);
+                Product? productToBeRemoved = _contextEmp.Products.FirstOrDefault(p => p.ProductId == productId);
                 _contextEmp.Remove(productToBeRemoved);
                 _contextEmp.SaveChanges();
             }

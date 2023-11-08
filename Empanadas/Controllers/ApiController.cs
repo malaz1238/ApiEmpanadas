@@ -18,6 +18,7 @@ namespace Empanadas.Controllers
         }
 
         [HttpGet]
+        [Route("GETPRODUCT")]
         public IActionResult GetProducts()
         {
             return Ok(_productService.GetProducts());
@@ -30,6 +31,7 @@ namespace Empanadas.Controllers
         }
 
         [HttpPost]
+        [Route("ADDPRODUCT")]
         public IActionResult Add(ProductDto dto)
         {
             var product = new Product()
@@ -43,6 +45,7 @@ namespace Empanadas.Controllers
         }
 
         [HttpDelete]
+        [Route("DELETEPRODUCT")]
         public IActionResult Delete(int id)
         {
             _productService.Delete(id);
